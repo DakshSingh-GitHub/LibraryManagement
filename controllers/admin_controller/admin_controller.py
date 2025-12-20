@@ -41,6 +41,7 @@ def check_if_user(username):
 	else: return True
 
 def check_role(username):
+	# checks the role of user
 	for user in users:
 		if user["username"] == username:
 			return user["role"]
