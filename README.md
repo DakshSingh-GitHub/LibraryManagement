@@ -22,6 +22,11 @@ A command-line based Library Management System written in Python. This system al
     *   Record the issue date and calculate the return date and price.
     *   Return books and update their availability.
     *   View the history of book issues.
+*   **User Management (Admin):**
+    *   Add new system users (admins, staff, etc.).
+    *   View all system users.
+    *   Delete system users.
+    *   Check user roles.
 
 ## Setup
 
@@ -53,23 +58,40 @@ The database consists of three main tables:
 
 A view named `visitor_issue` is also created to provide a consolidated view of issue details.
 
-### Application Usage
+## Application Usage
 
 The application provides a command-line menu to interact with the different management functions.
 
 ## Controllers
 
-The application's logic is separated into three controllers:
+The application's logic is separated into several controllers organized by function:
 
-*   `book_controller.py`: Contains all functions related to book management.
-*   `visitor_controller.py`: Contains all functions related to visitor management.
-*   `issue_controller.py`: Contains all functions related to book issuance and returns.
+*   **`controllers/admin_controller/`**
+    *   `admin_controller.py`: Manages system users and their roles.
+*   **`controllers/reception_controller/`**
+    *   `book_controller.py`: Contains all functions related to book management.
+    *   `issue_controller.py`: Contains all functions related to book issuance and returns.
+*   **`controllers/visitor_controller/`**
+    *   `visitor_controller.py`: Contains all functions related to visitor management.
 
 ---
 
 ## Controller Methods
 
-### `book_controller.py`
+### `controllers/admin_controller/admin_controller.py`
+
+*   **`add_users(username)`**
+    *   Adds a new user to the system. It checks if the username already exists. If not, it prompts for the user's name, password, role, and a note, then adds the user to the `users` list.
+*   **`view_users()`**
+    *   Iterates through the `users` list and prints the username, name, and role of each user.
+*   **`delete_user(username)`**
+    *   Removes a user from the `users` list based on the provided `username`. It prints a success message if found, or a "not found" message otherwise.
+*   **`check_if_user(username)`**
+    *   Checks if a user with the given `username` exists in the system. Returns `True` if found, `False` otherwise.
+*   **`check_role(username)`**
+    *   Retrieves the role of a specific user identified by `username`. Returns the role string if found, or `None` if the user does not exist.
+
+### `controllers/reception_controller/book_controller.py`
 
 *   **`add_book(connection, book_name, book_author, book_genre, book_publication_year, book_issue_rate, book_quantity)`**
     *   Adds a new book to the `books` table with the provided details.
@@ -84,7 +106,14 @@ The application's logic is separated into three controllers:
 *   **`remove_book_from_library_inventory(connection, book_id)`**
     *   Deletes a book from the `books` table. It includes a check to prevent deletion if not all copies of the book are currently in the library.
 
-### `visitor_controller.py`
+### `controllers/reception_controller/issue_controller.py`
+
+*   **`create_issue(connection, visitor, book_id, return_date)`**
+    *   Creates a new book issue record. It calculates the total price based on the book's rate and the duration of the issue. It also updates the `books_issued` count for the visitor and decrements the `book_current_quantity` for the book.
+*   **`return_book(connection)`**
+    *   Handles the process of a book being returned. It marks the issue as cleared, sets the return date to the current date, and updates the corresponding visitor and book records.
+
+### `controllers/visitor_controller/visitor_controller.py`
 
 *   **`add_visitor(connection, visitor_name, visitor_phone, visitor_email, visitor_address)`**
     *   Adds a new visitor to the `visitors` table. It parses the full name into first, middle, and last names.
@@ -96,10 +125,3 @@ The application's logic is separated into three controllers:
     *   Displays a formatted list of all registered visitors.
 *   **`remove_visitor(connection, visitor_uid)`**
     *   Removes a visitor from the `visitors` table, but only if they have no books currently issued to them.
-
-### `issue_controller.py`
-
-*   **`create_issue(connection, visitor, book_id, issue_date, return_date)`**
-    *   Creates a new book issue record. It calculates the total price based on the book's rate and the duration of the issue. It also updates the `books_issued` count for the visitor and decrements the `book_current_quantity` for the book.
-*   **`return_book(connection)`**
-    *   Handles the process of a book being returned. It marks the issue as cleared, sets the return date to the current date, and updates the corresponding visitor and book records.

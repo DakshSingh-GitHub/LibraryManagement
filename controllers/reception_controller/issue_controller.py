@@ -2,10 +2,10 @@
 import mysql.connector
 import mysql.connector.errors as err
 
-def create_issue(connection: mysql.connector.connection.MySQLConnection, visitor, book_id, issue_date, return_date):
+def create_issue(connection: mysql.connector.connection.MySQLConnection, visitor, book_id,return_date):
 	cursor = connection.cursor(buffered = True)
 
-	diff_query = f"   SELECT DATEDIFF('{return_date}', '{issue_date}');   "
+	diff_query = f"   SELECT DATEDIFF('{return_date}', CURDATE());   "
 	cursor.execute(diff_query)
 	diff = cursor.fetchone()
 	days_issued = diff[0]
@@ -24,8 +24,8 @@ def create_issue(connection: mysql.connector.connection.MySQLConnection, visitor
 	print(total_price)
 
 	sql = f"""
-		INSERT INTO book_issues (visitor_uid, book_id, issue_date, return_date, book_issue_price)
-		VALUES ({visitor}, {book_id}, '{issue_date}', '{return_date}', {total_price})
+		INSERT INTO book_issues (visitor_uid, book_id, return_date, book_issue_price)
+		VALUES ({visitor}, {book_id}, '{return_date}', {total_price})
 	"""
 
 	# UPDATING OTHER FIELDS
@@ -52,6 +52,8 @@ def return_book(connection: mysql.connector.connection.MySQLConnection):
 	print("-"*80)
 	issue_id = int(input("Issue ID to be used: "))
 
+
+
 	check_if_cleared = f"  SELECT * FROM book_issues WHERE issue_id = {issue_id};    "
 	cursor.execute(check_if_cleared)
 	record = cursor.fetchone()
@@ -76,7 +78,3 @@ def return_book(connection: mysql.connector.connection.MySQLConnection):
 		x = input("CONFIRM -> Visitor ID: {visitor} is returning Book ID: {book_id} (y/n): ")
 		if x in "yY": connection.commit()
 		else: print("Rolling back")
-
-# return_book - Add check for if the issue is cleared or not, if cleared, can not run again
-# view - Visitor_id, visitor_name, issue_id, book_name
-

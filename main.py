@@ -3,16 +3,35 @@ import os
 import mysql.connector as mysql
 import mysql.connector.errors as err
 
-import controllers.visitor_controller as visitors
-import controllers.book_controller as books
+import controllers.visitor_controller.visitor_controller as visitors
+import controllers.reception_controller.book_controller as books
+import controllers.reception_controller.issue_controller as issues
+import controllers.admin_controller.admin_controller as user
 
-try: lib = mysql.connect(host="127.0.0.1", username="root", password="root", database="library"); cursor = lib.cursor(buffered=True)
-except err.ProgrammingError as e: print("Incorrect username/password") ; os._exit(0)
-except err.ConnectionTimeoutError as e: print("Timeout Connection"); os._exit(0)
+try:
+	username = str(input("Enter your username: "))
+	check_user = user.check_if_user(username)
+except KeyboardInterrupt: print("\nCode has been terminated"); os._exit(-1)
+
+if check_user:
+	password = str(input("Enter your password: "))
+	try: lib = mysql.connect(host="127.0.0.1", username=username, password=password, database="library"); cursor = lib.cursor(buffered=True)
+	except err.ProgrammingError as e: print("Incorrect username/password") ; os._exit(0)
+	except err.ConnectionTimeoutError as e: print("Timeout Connection"); os._exit(0)
+	except KeyboardInterrupt: print("Code has been terminated"); os._exit(-1)
+else:
+	print("User is not present in the registry")
+	os._exit(-1)
 
 while True:
 	try:
 		os.system("cls")
+		if user.check_role(username).lower() == "admin":
+			print("----------------------------------ADMIN-----------------------------------------")
+			print("A1. Add a new user")
+			print("A2. Modify user")
+			print("A3. View all users")
+			print("A4. Delete a user")
 		print("---------------------GREAT LIBRARY (Press n+enter to exit)----------------------")
 		print("n + enter -> Exit the terminal prompt")
 		print("ctrl + c -> on any screen, takes you back to the main menu")
@@ -35,6 +54,26 @@ while True:
 		print("-" * 80)
 
 		choice = str(input("Enter your choice: "))
+
+		if user.check_role(username).lower() == "admin":
+			if choice in ["A1", "a1"]:
+				username = str(input("Enter username: "))
+				user.add_users(username)
+				print("-" * 80)
+				input("press any key to continue")
+				os.system("cls")
+
+			elif choice in ["A3", "a3"]:
+				user.view_users()
+				print("-" * 80)
+				input("press any key to continue")
+
+			elif choice in ["A4", "a4"]:
+				print("-" * 80)
+				username = str(input("Enter username: "))
+				user.delete_user(username)
+				input("press any key to continue")
+				os.system("cls")
 
 		if choice in ["V1", 'v1']:
 			name = str(input("Enter Visitor's good name: "))
@@ -121,6 +160,17 @@ while True:
 				print("-" * 80)
 				input("press any key to continue")
 				os.system("cls")
+
+		elif choice in ["I1", "i1"]:
+			try:
+				visitor = int(input("Enter Visitor ID: "))
+				book_id = int(input("Enter Book ID: "))
+				return_date = str(input("Enter Return Date: "))
+				issues.create_issue(lib, visitor, book_id, return_date)
+			except ValueError as e: print("Wrong input type")
+			finally:
+				print("-" * 80)
+				input("press any key to continue")
 
 		elif choice == "n": break
 		else:
