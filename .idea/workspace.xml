@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="17577824-5703-413f-9f5a-5ea7bc1bbf47" name="Changes" comment="README.md file for the project" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;DakshSingh-GitHub&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/DakshSingh-GitHub/LibraryManagement.git&quot;,
+    &quot;accountId&quot;: &quot;466c20f9-a983-42fe-9dc0-5acc6f06560b&quot;
+  }
+}</component>
+  <component name="InvalidFacetManager">
+    <ignored-facets>
+      <facet id="LibraryManagement/invalid/Python facet" />
+    </ignored-facets>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="36f5otX4iOyblVZ3PmBxSpVTEtW" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Production Test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Production.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.init_users_bin.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.user_test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.users.executor&quot;: &quot;Run&quot;,
+    &quot;Python.visitor_control.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/daksh/Documents/Projects/LibraryManagement&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;ChangesTree.GroupingKeys&quot;: [
+      &quot;directory&quot;,
+      &quot;repository&quot;
+    ],
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ],
+    &quot;GitStage.ChangesTree.GroupingKeys&quot;: [
+      &quot;directory&quot;,
+      &quot;repository&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\daksh\Documents\Projects\LibraryManagement\tests" />
+      <recent name="C:\Users\daksh\Documents\Projects\LibraryManagement\controllers\admin_controller" />
+      <recent name="C:\Users\daksh\Documents\Projects\LibraryManagement\controllers\visitor_controller" />
+      <recent name="C:\Users\daksh\Documents\Projects\LibraryManagement\controllers\reception_controller" />
+      <recent name="C:\Users\daksh\Documents\Projects\LibraryManagement\queries" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.main">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="LibraryManagement" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="user_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="LibraryManagement" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/user_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.user_test" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-f2b7a9f6281b-6e1f45a539f7-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-253.29346.142" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="17577824-5703-413f-9f5a-5ea7bc1bbf47" name="Changes" comment="" />
+      <created>1765384963942</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1765384963942</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Initial Commit for Library Management Software">
+      <option name="closed" value="true" />
+      <created>1765905141114</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1765905141114</updated>
+    </task>
+    <task id="LOCAL-00002" summary="README.md file for the project">
+      <option name="closed" value="true" />
+      <created>1765905570341</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1765905570341</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added implementations for the validation of a user while initiating the program, the users will be stored in an &quot;execution time&quot; file, &quot;users.py&quot; in users folder. I'll update it later to use a bin file for the same.&#10;- added methods in admin_controller.py, bring &quot;add_user(username)&quot;, &quot;view_user()&quot;, &quot;delete_user(username)&quot;, &quot;check_role(username)&quot;, and &quot;check_if_user(username)&quot;. These methods are pretty much self-explanatory&#10;- Improved the folder structure of the &quot;controllers&quot; folder and categorized each controller in its segment.&#10;- Updated the readme.md file in order to accommodate the new information">
+      <option name="closed" value="true" />
+      <created>1766213371301</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1766213371301</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added implementations for the validation of a user while initiating the program, the users will be stored in an &quot;execution time&quot; file, &quot;users.py&quot; in users folder. I'll update it later to use a bin file for the same.&#10;- added methods in admin_controller.py, bring &quot;add_user(username)&quot;, &quot;view_user()&quot;, &quot;delete_user(username)&quot;, &quot;check_role(username)&quot;, and &quot;check_if_user(username)&quot;. These methods are pretty much self-explanatory&#10;- Improved the folder structure of the &quot;controllers&quot; folder and categorized each controller in its segment.&#10;- Updated the readme.md file in order to accommodate the new information">
+      <option name="closed" value="true" />
+      <created>1766213474055</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1766213474055</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added implementations for the validation of a user while initiating the program, the users will be stored in an &quot;execution time&quot; file, &quot;users.py&quot; in users folder. I'll update it later to use a bin file for the same.&#10;- added methods in admin_controller.py, bring &quot;add_user(username)&quot;, &quot;view_user()&quot;, &quot;delete_user(username)&quot;, &quot;check_role(username)&quot;, and &quot;check_if_user(username)&quot;. These methods are pretty much self-explanatory&#10;- Improved the folder structure of the &quot;controllers&quot; folder and categorized each controller in its segment.&#10;- Updated the readme.md file in order to accommodate the new information">
+      <option name="closed" value="true" />
+      <created>1766213566381</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1766213566381</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Added user data management via a binary file, &quot;users.bin&quot;. To create the file, run the &quot;user_initialization.py&quot; file.">
+      <option name="closed" value="true" />
+      <created>1766321065192</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1766321065192</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Modified *.gitignore to ignore the .idea folder">
+      <option name="closed" value="true" />
+      <created>1766321195825</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1766321195825</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Updated the login at main.py, now if &quot;users.bin&quot; file doesn't exist, first it'll be created with a home user, and then the project will continue. If it exists, Program will run normally">
+      <option name="closed" value="true" />
+      <created>1766322162126</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1766322162126</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
+    <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.facetType" implementationName="Python" />
+    <option featureType="com.intellij.configurationType" implementationName="PythonConfigurationType" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT_PROFILE" value="Default" />
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
+    <MESSAGE value="Initial Commit for Library Management Software" />
+    <MESSAGE value="README.md file for the project" />
+    <MESSAGE value="Added implementations for the validation of a user while initiating the program, the users will be stored in an &quot;execution time&quot; file, &quot;users.py&quot; in users folder. I'll update it later to use a bin file for the same.&#10;- added methods in admin_controller.py, bring &quot;add_user(username)&quot;, &quot;view_user()&quot;, &quot;delete_user(username)&quot;, &quot;check_role(username)&quot;, and &quot;check_if_user(username)&quot;. These methods are pretty much self-explanatory&#10;- Improved the folder structure of the &quot;controllers&quot; folder and categorized each controller in its segment.&#10;- Updated the readme.md file in order to accommodate the new information" />
+    <MESSAGE value="Added user data management via a binary file, &quot;users.bin&quot;. To create the file, run the &quot;user_initialization.py&quot; file." />
+    <MESSAGE value="Modified *.gitignore to ignore the .idea folder" />
+    <MESSAGE value="Updated the login at main.py, now if &quot;users.bin&quot; file doesn't exist, first it'll be created with a home user, and then the project will continue. If it exists, Program will run normally" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated the login at main.py, now if &quot;users.bin&quot; file doesn't exist, first it'll be created with a home user, and then the project will continue. If it exists, Program will run normally" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
