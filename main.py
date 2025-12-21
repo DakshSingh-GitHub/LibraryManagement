@@ -1,4 +1,3 @@
-
 import os
 import mysql.connector as mysql
 import mysql.connector.errors as err
@@ -8,12 +7,34 @@ import controllers.reception_controller.book_controller as books
 import controllers.reception_controller.issue_controller as issues
 import controllers.admin_controller.admin_controller as user
 
+import users.user_initialization as user_init
+
+users_bin_path = os.path.join(os.path.dirname(__file__), 'users', 'users.bin')
+
 try:
-	username = str(input("Enter your username: "))
+	os.system("cls")
+	if not os.path.exists(users_bin_path) or os.path.getsize(users_bin_path) == 0:
+		username = str(input("Enter First User's details, username: "))
+		name = str(input("Enter name: "))
+		password = str(input("Enter password: "))
+		role = str(input("Enter role: "))
+		note = str(input("Enter note: "))
+		new_user = {
+			"username": username.lower(),
+			"name": name,
+			"password": password,
+			"role": role,
+			"note": note
+		}
+		user_init.initialize_file(new_user)
+	else:
+		username = str(input("Enter your username: "))
+
 	check_user = user.check_if_user(username)
 except KeyboardInterrupt: print("\nCode has been terminated"); os._exit(-1)
 
 if check_user:
+	print("-"*80)
 	password = str(input("Enter your password: "))
 	try: lib = mysql.connect(host="127.0.0.1", username=username, password=password, database="library"); cursor = lib.cursor(buffered=True)
 	except err.ProgrammingError as e: print("Incorrect username/password") ; os._exit(0)
@@ -66,7 +87,8 @@ while True:
 			elif choice in ["A3", "a3"]:
 				user.view_users()
 				print("-" * 80)
-				input("press any key to continue")
+				x = input("press any key to continue")
+				if isinstance(x, str): os.system("cls")
 
 			elif choice in ["A4", "a4"]:
 				print("-" * 80)
@@ -178,6 +200,7 @@ while True:
 			print("-" * 80)
 			input("press any key to continue")
 			os.system("cls")
+
 	except KeyboardInterrupt: print()
 
 os.system("cls")
