@@ -9,7 +9,7 @@ import controllers.admin_controller.admin_controller as user
 
 import users.user_initialization as user_init
 
-users_bin_path = os.path.join(os.path.dirname(__file__), 'users', 'users.bin')
+users_bin_path = os.path.join(os.path.dirname(__file__), 'dataset', 'users.bin')
 
 # --- Initial Setup (Runs once) ---
 try:
@@ -132,7 +132,7 @@ while True:
 					elif choice in ["A5", "a5"]:
 						print("Switching user...")
 						lib.close()
-						break # Breaks the inner loop, returning to the Session Loop
+						break
 
 				if choice in ["V1", 'v1']:
 					name = str(input("Enter Visitor's good name: "))

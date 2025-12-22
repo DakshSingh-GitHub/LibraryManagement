@@ -7,11 +7,11 @@ import os
 #   controllers/
 #     admin_controller/
 #       admin_controller.py
-#   users/
+#   dataset/
 #     users.bin
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-USERS_FILE = os.path.join(BASE_DIR, 'users', 'users.bin')
+USERS_FILE = os.path.join(BASE_DIR, 'dataset', 'users.bin')
 
 # Define the public interface of this module
 __all__ = ['add_users', 'view_users', 'delete_user', 'check_if_user', 'check_role', 'edit_user']

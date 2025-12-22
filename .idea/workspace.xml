@@ -259,12 +259,31 @@
       <option name="project" value="LOCAL" />
       <updated>1766322389972</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Optimized the main application loop to integrate switching between users.&#10;In the admin controller, completed the functionality to edit a user's information.">
+      <option name="closed" value="true" />
+      <created>1766422695928</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1766422695931</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.facetType" implementationName="Python" />
     <option featureType="com.intellij.configurationType" implementationName="PythonConfigurationType" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT_PROFILE" value="Default" />
@@ -275,7 +294,8 @@
     <MESSAGE value="Added user data management via a binary file, &quot;users.bin&quot;. To create the file, run the &quot;user_initialization.py&quot; file." />
     <MESSAGE value="Modified *.gitignore to ignore the .idea folder" />
     <MESSAGE value="Updated the login at main.py, now if &quot;users.bin&quot; file doesn't exist, first it'll be created with a home user, and then the project will continue. If it exists, Program will run normally" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated the login at main.py, now if &quot;users.bin&quot; file doesn't exist, first it'll be created with a home user, and then the project will continue. If it exists, Program will run normally" />
+    <MESSAGE value="Optimized the main application loop to integrate switching between users.&#10;In the admin controller, completed the functionality to edit a user's information." />
+    <option name="LAST_COMMIT_MESSAGE" value="Optimized the main application loop to integrate switching between users.&#10;In the admin controller, completed the functionality to edit a user's information." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
