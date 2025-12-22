@@ -24,6 +24,7 @@ A command-line based Library Management System written in Python. This system al
     *   View the history of book issues.
 *   **User Management (Admin):**
     *   Add new system users (admins, staff, etc.).
+    *   Edit existing user details.
     *   View all system users.
     *   Delete system users.
     *   Check user roles.
@@ -81,15 +82,21 @@ The application's logic is separated into several controllers organized by funct
 ### `controllers/admin_controller/admin_controller.py`
 
 *   **`add_users(username)`**
-    *   Adds a new user to the system. It checks if the username already exists. If not, it prompts for the user's name, password, role, and a note, then adds the user to the `users` list.
+    *   Adds a new user to the system. It checks if the username already exists. If not, it prompts for the user's name, password, role, and a note, then adds the user to the `users.bin` file.
 *   **`view_users()`**
-    *   Iterates through the `users` list and prints the username, name, and role of each user.
+    *   Iterates through the users loaded from `users.bin` and prints the username, name, role, and note of each user.
 *   **`delete_user(username)`**
-    *   Removes a user from the `users` list based on the provided `username`. It prints a success message if found, or a "not found" message otherwise.
+    *   Removes a user from the system based on the provided `username`. It prints a success message if found, or a "not found" message otherwise.
 *   **`check_if_user(username)`**
     *   Checks if a user with the given `username` exists in the system. Returns `True` if found, `False` otherwise.
 *   **`check_role(username)`**
     *   Retrieves the role of a specific user identified by `username`. Returns the role string if found, or `None` if the user does not exist.
+*   **`edit_user(username_to_edit)`**
+    *   Allows editing the details of an existing user. It prompts for new values for name, password, role, and note. Leaving a field blank keeps the current value.
+*   **`_load_users()`** (Internal)
+    *   Helper function that loads the list of users from the `users.bin` file using `pickle`. Returns an empty list if the file doesn't exist or is corrupted.
+*   **`_save_users(users_data)`** (Internal)
+    *   Helper function that saves the provided list of users to the `users.bin` file using `pickle`.
 
 ### `controllers/reception_controller/book_controller.py`
 
