@@ -1,5 +1,6 @@
 import pickle
 import os
+import sys
 
 # Path to the users.bin file
 # Assuming the structure is:
@@ -10,7 +11,11 @@ import os
 #   dataset/
 #     users.bin
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+if getattr(sys, 'frozen', False):
+    BASE_DIR = os.path.dirname(sys.executable)
+else:
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 USERS_FILE = os.path.join(BASE_DIR, 'dataset', 'users.bin')
 
 # Define the public interface of this module

@@ -1,0 +1,84 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="header-bar">
+    <h1 class="page-title">Visitors</h1>
+    <button onclick="openModal('addVisitorModal')" class="btn btn-primary">
+        + Add Visitor
+    </button>
+</div>
+
+<div class="card mb-6">
+    <form action="{{ url_for('visitors') }}" method="GET" class="flex gap-4">
+        <input type="text" name="search" placeholder="Search by name or phone..." class="input-control"
+            style="margin-bottom:0">
+        <button type="submit" class="btn btn-primary">Search</button>
+        {% if request.args.get('search') %}
+        <a href="{{ url_for('visitors') }}" class="btn" style="background:var(--border)">Clear</a>
+        {% endif %}
+    </form>
+</div>
+
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Issued Books</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for visitor in visitors %}
+            <tr>
+                <td>{{ visitor.visitor_uid }}</td>
+                <td>{{ visitor.visitor_fname }}</td>
+                <td>{{ visitor.visitor_lname }}</td>
+                <td>{{ visitor.visitor_phone }}</td>
+                <td>{{ visitor.visitor_email }}</td>
+                <td>{{ visitor.visitor_address }}</td>
+                <td>
+                    <span class="font-bold {% if visitor.books_issued > 0 %}text-primary{% endif %}">
+                        {{ visitor.books_issued }}
+                    </span>
+                </td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="7" style="text-align:center; padding: 2rem;">No visitors found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<!-- Add Visitor Modal -->
+<div id="addVisitorModal" class="modal">
+    <div class="modal-content">
+        <h2 class="mb-6">Add New Visitor</h2>
+        <form action="{{ url_for('add_visitor') }}" method="POST">
+            <label class="stat-label">Full Name</label>
+            <input type="text" name="name" required class="input-control" placeholder="e.g. John Doe">
+
+            <label class="stat-label">Phone</label>
+            <input type="text" name="phone" required class="input-control">
+
+            <label class="stat-label">Email</label>
+            <input type="email" name="email" required class="input-control">
+
+            <label class="stat-label">Address</label>
+            <input type="text" name="address" required class="input-control">
+
+            <div class="flex gap-4" style="margin-top: var(--space-6);">
+                <button type="button" onclick="closeModal('addVisitorModal')" class="btn"
+                    style="background:var(--border); flex:1">Cancel</button>
+                <button type="submit" class="btn btn-primary" style="flex:1">Add Visitor</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

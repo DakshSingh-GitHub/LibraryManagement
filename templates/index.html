@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="header-bar">
+    <h1 class="page-title">Dashboard</h1>
+</div>
+
+{% if error %}
+<div class="alert alert-error">{{ error }}</div>
+{% else %}
+<div class="stats-grid">
+    <div class="stat-card">
+        <div class="stat-label">Total Books</div>
+        <div class="stat-value">{{ total_books }}</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-label">Total Visitors</div>
+        <div class="stat-value">{{ total_visitors }}</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-label">Active Issues</div>
+        <div class="stat-value">{{ active_issues }}</div>
+    </div>
+</div>
+{% endif %}
+
+<div class="card">
+    <h2>Welcome to the Library Management System</h2>
+    <p style="color: var(--text-muted); margin-top: var(--space-4);">
+        Use the sidebar to manage books, visitors, and issue records. This web interface works in sync with your
+        existing CLI tool.
+    </p>
+</div>
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="header-bar">
+    <h1 class="page-title">Active Issues</h1>
+    <button onclick="openModal('createIssueModal')" class="btn btn-primary">
+        + Issue Book
+    </button>
+</div>
+
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Visitor</th>
+                <th>Book</th>
+                <th>Return Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for issue in issues %}
+            <tr>
+                <td>{{ issue.issue_id }}</td>
+                <td>{{ issue.visitor_fname }} {{ issue.visitor_lname }}</td>
+                <td>{{ issue.book_name }}</td>
+                <td>{{ issue.return_date }}</td>
+                <td>
+                    <form action="{{ url_for('return_book_route', issue_id=issue.issue_id) }}" method="POST"
+                        onsubmit="return confirm('Confirm return for {{ issue.book_name }}?');">
+                        <button type="submit" class="btn btn-primary btn-sm" style="background: var(--success)">Result &
+                            Clear</button>
+                    </form>
+                </td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="5" style="text-align:center; padding: 2rem;">No active issues.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<!-- Create Issue Modal -->
+<div id="createIssueModal" class="modal">
+    <div class="modal-content">
+        <h2 class="mb-6">Issue Book</h2>
+        <form action="{{ url_for('create_issue') }}" method="POST">
+            <label class="stat-label">Visitor ID</label>
+            <input type="number" name="visitor_id" required class="input-control" placeholder="Look up in Visitors tab">
+
+            <label class="stat-label">Book ID</label>
+            <input type="number" name="book_id" required class="input-control" placeholder="Look up in Books tab">
+
+            <label class="stat-label">Return Date (YYYY-MM-DD)</label>
+            <input type="date" name="return_date" required class="input-control">
+
+            <div class="flex gap-4" style="margin-top: var(--space-6);">
+                <button type="button" onclick="closeModal('createIssueModal')" class="btn"
+                    style="background:var(--border); flex:1">Cancel</button>
+                <button type="submit" class="btn btn-primary" style="flex:1">Issue Book</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

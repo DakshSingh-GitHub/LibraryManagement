@@ -1,0 +1,103 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="header-bar">
+    <h1 class="page-title">Books</h1>
+    <button onclick="openModal('addBookModal')" class="btn btn-primary">
+        + Add Book
+    </button>
+</div>
+
+<div class="card mb-6">
+    <form action="{{ url_for('books') }}" method="GET" class="flex gap-4">
+        <input type="text" name="search" placeholder="Search by name or author..." class="input-control"
+            style="margin-bottom:0">
+        <button type="submit" class="btn btn-primary">Search</button>
+        {% if request.args.get('search') %}
+        <a href="{{ url_for('books') }}" class="btn" style="background:var(--border)">Clear</a>
+        {% endif %}
+    </form>
+</div>
+
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Author</th>
+                <th>Genre</th>
+                <th>Year</th>
+                <th>Rate</th>
+                <th>Qty (Cur/Tot)</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for book in books %}
+            <tr>
+                <td>{{ book.book_id }}</td>
+                <td>{{ book.book_name }}</td>
+                <td>{{ book.book_author }}</td>
+                <td>{{ book.book_genre }}</td>
+                <td>{{ book.book_publication_year }}</td>
+                <td>₹{{ book.book_issue_rate }}</td>
+                <td>{{ book.book_current_quantity }} / {{ book.book_quantity }}</td>
+                <td>
+                    {% if book.book_quantity == book.book_current_quantity %}
+                    <form action="{{ url_for('delete_book', book_id=book.book_id) }}" method="POST"
+                        onsubmit="return confirm('Are you sure you want to delete this book?');"
+                        style="display:inline;">
+                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                    </form>
+                    {% else %}
+                    <span class="text-muted" style="font-size:0.8rem">Issued</span>
+                    {% endif %}
+                </td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="8" style="text-align:center; padding: 2rem;">No books found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<!-- Add Book Modal -->
+<div id="addBookModal" class="modal">
+    <div class="modal-content">
+        <h2 class="mb-6">Add New Book</h2>
+        <form action="{{ url_for('add_book') }}" method="POST">
+            <label class="stat-label">Book Name</label>
+            <input type="text" name="book_name" required class="input-control">
+
+            <label class="stat-label">Author</label>
+            <input type="text" name="book_author" required class="input-control">
+
+            <label class="stat-label">Genre</label>
+            <input type="text" name="book_genre" required class="input-control">
+
+            <div class="flex gap-4">
+                <div style="flex:1">
+                    <label class="stat-label">Year</label>
+                    <input type="number" name="book_publication_year" required class="input-control">
+                </div>
+                <div style="flex:1">
+                    <label class="stat-label">Rate</label>
+                    <input type="number" name="book_issue_rate" required class="input-control">
+                </div>
+            </div>
+
+            <label class="stat-label">Quantity</label>
+            <input type="number" name="book_quantity" required class="input-control">
+
+            <div class="flex gap-4" style="margin-top: var(--space-6);">
+                <button type="button" onclick="closeModal('addBookModal')" class="btn"
+                    style="background:var(--border); flex:1">Cancel</button>
+                <button type="submit" class="btn btn-primary" style="flex:1">Add Book</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

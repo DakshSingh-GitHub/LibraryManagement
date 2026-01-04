@@ -47,12 +47,11 @@ def App():
 				password = str(input("Enter your password: "))
 				try:
 					lib = mysql.connect(host="127.0.0.1", username=username, password=password, database="library")
-					cursor = lib.cursor(buffered=True)
-				except err.ProgrammingError as e:
+				except err.ProgrammingError:
 					print("Incorrect username/password")
 					input("Press enter to try again...")
 					continue
-				except err.ConnectionTimeoutError as e:
+				except err.ConnectionTimeoutError:
 					print("Timeout Connection")
 					input("Press enter to try again...")
 					continue
@@ -205,7 +204,7 @@ def App():
 						try:
 							book_id = int(input("Enter Book ID: " ))
 							books.update_book_availability(lib, book_id)
-						except ValueError as e: print("Wrong input type")
+						except ValueError: print("Wrong input type")
 						finally:
 							print("-" * 80)
 							input("press any key to continue")
@@ -215,7 +214,7 @@ def App():
 						try:
 							book_id = int(input("Enter Book ID: " ))
 							books.remove_book_from_library_inventory(lib, book_id)
-						except ValueError as e: print("Wrong input type")
+						except ValueError: print("Wrong input type")
 						finally:
 							print("-" * 80)
 							input("press any key to continue")
@@ -227,7 +226,7 @@ def App():
 							book_id = int(input("Enter Book ID: "))
 							return_date = str(input("Enter Return Date: "))
 							issues.create_issue(lib, visitor, book_id, return_date)
-						except ValueError as e: print("Wrong input type")
+						except ValueError: print("Wrong input type")
 						finally:
 							print("-" * 80)
 							input("press any key to continue")
